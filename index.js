@@ -3,6 +3,7 @@
  */
 const config = {
   extends: ['eslint:recommended', 'plugin:prettier/recommended'],
+  plugins: ['jest'],
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
@@ -13,6 +14,7 @@ const config = {
   env: {
     browser: true,
     node: true,
+    'jest/globals': true,
   },
 
   overrides: [
