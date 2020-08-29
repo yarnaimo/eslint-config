@@ -23,9 +23,9 @@ const config = {
         },
     },
     rules: {
+        'no-undef': 'off',
         'react/prop-types': 'off',
         'react/display-name': 'off',
-
         '@typescript-eslint/camelcase': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/explicit-module-boundary-types': 'off',
@@ -34,6 +34,7 @@ const config = {
         '@typescript-eslint/no-namespace': 'off',
         '@typescript-eslint/no-unused-vars': 'off',
 
+        'brace-style': ['error', 'stroustrup'],
         '@typescript-eslint/no-floating-promises': 'warn',
         '@typescript-eslint/ban-ts-comment': [
             'warn',
@@ -55,8 +56,6 @@ const config = {
                 extendDefaults: true,
             },
         ],
-
-        'no-undef': 'off',
     },
 }
 
