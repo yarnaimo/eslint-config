@@ -2,30 +2,34 @@
  * @type {import('eslint').Linter.Config}
  */
 const config = {
-    extends: [
-        'eslint:recommended',
+  extends: ['eslint:recommended', 'plugin:prettier/recommended'],
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
+  env: {
+    browser: true,
+    node: true,
+  },
+
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      extends: [
         'plugin:react/recommended',
         'plugin:react-hooks/recommended',
         'plugin:@typescript-eslint/recommended',
-        'plugin:prettier/recommended',
         'prettier/@typescript-eslint',
-    ],
-    plugins: ['@typescript-eslint', 'react'],
-    parser: '@typescript-eslint/parser',
-    env: {
-        browser: true,
-        node: true,
-    },
-    parserOptions: {
-        sourceType: 'module',
-        ecmaFeatures: {
-            jsx: true,
-        },
-    },
-    rules: {
+      ],
+      plugins: ['@typescript-eslint', 'react'],
+      parser: '@typescript-eslint/parser',
+      rules: {
+        'no-undef': 'off',
         'react/prop-types': 'off',
         'react/display-name': 'off',
-
         '@typescript-eslint/camelcase': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/explicit-module-boundary-types': 'off',
@@ -36,28 +40,28 @@ const config = {
 
         '@typescript-eslint/no-floating-promises': 'warn',
         '@typescript-eslint/ban-ts-comment': [
-            'warn',
-            {
-                'ts-expect-error': 'allow-with-description',
-                'ts-ignore': 'allow-with-description',
-                'ts-nocheck': 'allow-with-description',
-                'ts-check': false,
-                minimumDescriptionLength: 3,
-            },
+          'warn',
+          {
+            'ts-expect-error': 'allow-with-description',
+            'ts-ignore': 'allow-with-description',
+            'ts-nocheck': 'allow-with-description',
+            'ts-check': false,
+            minimumDescriptionLength: 3,
+          },
         ],
         '@typescript-eslint/ban-types': [
-            'error',
-            {
-                types: {
-                    '{}': false,
-                    object: false,
-                },
-                extendDefaults: true,
+          'error',
+          {
+            types: {
+              '{}': false,
+              object: false,
             },
+            extendDefaults: true,
+          },
         ],
-
-        'no-undef': 'off',
+      },
     },
+  ],
 }
 
 module.exports = config
