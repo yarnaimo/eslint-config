@@ -30,8 +30,9 @@ const config = {
       parser: '@typescript-eslint/parser',
       rules: {
         'no-undef': 'off',
-        'react/prop-types': 'off',
         'react/display-name': 'off',
+        'react/jsx-no-literals': ['error', { ignoreProps: true }],
+        'react/prop-types': 'off',
         '@typescript-eslint/camelcase': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/explicit-module-boundary-types': 'off',
