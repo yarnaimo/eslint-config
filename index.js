@@ -24,7 +24,7 @@ const config = {
         'plugin:react/recommended',
         'plugin:react-hooks/recommended',
         'plugin:@typescript-eslint/recommended',
-        'prettier/@typescript-eslint',
+        'plugin:prettier/recommended',
       ],
       plugins: ['@typescript-eslint', 'react'],
       parser: '@typescript-eslint/parser',
