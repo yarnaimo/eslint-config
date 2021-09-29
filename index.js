@@ -5,7 +5,7 @@ const config = {
   extends: ['eslint:recommended', 'plugin:prettier/recommended'],
   plugins: ['jest'],
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 'latest',
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
@@ -30,7 +30,6 @@ const config = {
       rules: {
         'no-undef': 'off',
         'react/display-name': 'off',
-        'react/jsx-no-literals': ['error', { ignoreProps: true }],
         'react/prop-types': 'off',
         '@typescript-eslint/camelcase': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
@@ -41,7 +40,24 @@ const config = {
         '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/no-unused-vars': 'off',
 
-        '@typescript-eslint/no-floating-promises': 'warn',
+        'react/jsx-no-literals': ['error', { ignoreProps: true }],
+        'react/self-closing-comp': [
+          'error',
+          {
+            component: true,
+            html: true,
+          },
+        ],
+        '@typescript-eslint/no-floating-promises': 'error',
+        '@typescript-eslint/promise-function-async': [
+          'error',
+          {
+            checkArrowFunctions: true,
+            checkFunctionDeclarations: true,
+            checkFunctionExpressions: true,
+            checkMethodDeclarations: true,
+          },
+        ],
         '@typescript-eslint/ban-ts-comment': [
           'warn',
           {
