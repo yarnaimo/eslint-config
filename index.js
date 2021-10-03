@@ -25,7 +25,7 @@ const config = {
         'plugin:react-hooks/recommended',
         'plugin:@typescript-eslint/recommended',
       ],
-      plugins: ['@typescript-eslint', 'react'],
+      plugins: ['@typescript-eslint', 'react', 'import', 'unused-imports'],
       parser: '@typescript-eslint/parser',
       rules: {
         'no-undef': 'off',
@@ -40,6 +40,24 @@ const config = {
         '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/no-unused-vars': 'off',
 
+        'sort-imports': ['error', { ignoreDeclarationSort: true }],
+        'import/first': 'error',
+        'import/no-duplicates': 'error',
+        'import/order': [
+          'error',
+          {
+            'newlines-between': 'always',
+            groups: [
+              'builtin',
+              'external',
+              ['parent', 'sibling', 'index'],
+              'type',
+            ],
+            alphabetize: { order: 'asc' },
+          },
+        ],
+        'unused-imports/no-unused-imports': 'error',
+
         'react/jsx-no-literals': ['error', { ignoreProps: true }],
         'react/self-closing-comp': [
           'error',
@@ -48,6 +66,7 @@ const config = {
             html: true,
           },
         ],
+
         '@typescript-eslint/no-floating-promises': 'error',
         '@typescript-eslint/promise-function-async': [
           'error',
