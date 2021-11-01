@@ -41,6 +41,7 @@ const config = {
         '@typescript-eslint/no-unused-vars': 'off',
 
         'sort-imports': ['error', { ignoreDeclarationSort: true }],
+        'import/extensions': ['error', 'ignorePackages'],
         'import/first': 'error',
         'import/no-duplicates': 'error',
         'import/order': [
