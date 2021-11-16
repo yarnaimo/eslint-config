@@ -28,6 +28,7 @@ const config = {
       plugins: ['@typescript-eslint', 'react', 'import', 'unused-imports'],
       parser: '@typescript-eslint/parser',
       rules: {
+        'no-empty': 'off',
         'no-undef': 'off',
         'react/display-name': 'off',
         'react/prop-types': 'off',
