@@ -69,6 +69,8 @@ const config = {
           },
         ],
 
+        'object-shorthand': 'error',
+
         '@typescript-eslint/no-floating-promises': 'error',
         '@typescript-eslint/promise-function-async': [
           'error',
