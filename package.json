@@ -1,6 +1,6 @@
 {
   "name": "@yarnaimo/eslint-config",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "repository": "github:yarnaimo/eslint-config",
   "license": "MIT",
   "author": "yamaimo <yarnaimo@gmail.com>",
